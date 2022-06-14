@@ -2,12 +2,22 @@ from fastapi import FastAPI
 
 app = FastAPI()
 
+mindula = [
+    {
+        "name": "Mindula",
+        "age": 23
+    },
+    {
+        "name": "Dilthushan",
+        "age":23
+    }]
+
 
 @app.get("/")
 async def root():
     return {"message": "Hello my-API"}
 
 
-@app.get("/hello/{name}")
-async def say_hello(name: str):
-    return {"message": f"Hello {name}"}
+@app.get("/mindula")
+def get_mindula():
+    return mindula
